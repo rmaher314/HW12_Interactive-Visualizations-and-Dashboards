@@ -1,12 +1,49 @@
 // Read in json file
-
-d3.json("samples.json").then(function(data){
+// d3.json("samples.json").then(function(data){ console.log(data)});
+d3.json("./samples.json", function(error, data){
     console.log(data);
 });
 
+// const dataPromise = d3.json(./samples.json);
+// console.log("Data Promise: ", dataPromise);
+
+
+
+//Drop Down Menu Event Handler
+// d3.selectAll("body").on("change", updatePage);
+
+// function updatePage() {
+//   // Use D3 to select the dropdown menu
+//   var dropdownMenu = d3.selectAll("#selectOption").node();
+//   // Assign the dropdown menu item ID to a variable
+//   var dropdownMenuID = dropdownMenu.id;
+//   // Assign the dropdown menu option to a variable
+//   var selectedOption = dropdownMenu.value;
+
+//   console.log(dropdownMenuID);
+//   console.log(selectedOption);
+//}
+
+//Bar Chart Code
+
+// var trace1 = {
+//     x: ["beer", "wine", "martini", "margarita",
+//       "ice tea", "rum & coke", "mai tai", "gin & tonic"],
+//     y: [22.7, 17.1, 9.9, 8.7, 7.2, 6.1, 6.0, 4.6],
+//     type: "bar"
+//   };
+  
+//   var data = [trace1];
+  
+//   var layout = {
+//     title: "'Bar' Chart"
+//   };
+  
+//   Plotly.newPlot("plot", data, layout);
 
 
 //Gauge Chart Code:
+
 // var data = [
 //     {
 //       domain: { x: [0, 1], y: [0, 1] },
