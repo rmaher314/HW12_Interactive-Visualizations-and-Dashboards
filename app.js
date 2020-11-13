@@ -1,6 +1,8 @@
 // Read in json file
 
-d3.json("data/samples.json").then
+d3.json("samples.json").then(function(data){
+    console.log(data);
+});
 
 
 
