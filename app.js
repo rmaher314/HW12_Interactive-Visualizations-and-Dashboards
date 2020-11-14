@@ -10,11 +10,11 @@ d3.json("./samples.json", function(error, data){
 
 
 //Drop Down Menu Event Handler
-// d3.selectAll("body").on("change", updatePage);
+// d3.selectAll("#selDataset").on("optionChange", updatePage);
 
 // function updatePage() {
 //   // Use D3 to select the dropdown menu
-//   var dropdownMenu = d3.selectAll("#selectOption").node();
+//   var dropdownMenu = d3.selectAll("#selDataset").node();
 //   // Assign the dropdown menu item ID to a variable
 //   var dropdownMenuID = dropdownMenu.id;
 //   // Assign the dropdown menu option to a variable
@@ -36,10 +36,10 @@ d3.json("./samples.json", function(error, data){
 //   var data = [trace1];
   
 //   var layout = {
-//     title: "'Bar' Chart"
+//     title: "Top 10 Bacteria Cultures Found"
 //   };
   
-//   Plotly.newPlot("plot", data, layout);
+//   Plotly.newPlot("bar", data, layout);
 
 
 //Gauge Chart Code:
@@ -48,7 +48,7 @@ d3.json("./samples.json", function(error, data){
 //     {
 //       domain: { x: [0, 1], y: [0, 1] },
 //       value: 450,
-//       title: { text: "Speed" },
+//       title: { text: "Belly Button Washing Frequency" },
 //       type: "indicator",
 //       mode: "gauge+number+delta",
 //       delta: { reference: 380 },
@@ -67,8 +67,8 @@ d3.json("./samples.json", function(error, data){
 //     }
 //   ];
   
-//   var layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
-//   Plotly.newPlot('myDiv', data, layout);
+//   var layout = { width: 600, height: 450, margin: { t: 0, b: 0 }};
+//   Plotly.newPlot('gauge', data, layout);
 
 
 //Bubble Chart Code:
@@ -85,10 +85,11 @@ d3.json("./samples.json", function(error, data){
 //   var data = [trace1];
   
 //   var layout = {
-//     title: 'Marker Size',
+//     title: 'Bacteria Cultures Per Sample',
+//     x: 'OTU ID',
 //     showlegend: false,
 //     height: 600,
 //     width: 600
 //   };
   
-//   Plotly.newPlot('myDiv', data, layout);
+//   Plotly.newPlot('bubble', data, layout);
