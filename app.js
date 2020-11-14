@@ -1,28 +1,48 @@
 // Read in json file
 // d3.json("samples.json").then(function(data){ console.log(data)});
-d3.json("./samples.json", function(error, data){
-    console.log(data);
-});
+var nameArray;
+function init(){
+    console.log("init called");
+    d3.json("./samples.json").then((data) => {
+        nameArray = data.names;
+        console.log( nameArray);
+        var ddlItems = document.getElementById("selDataset")
+
+        for (var i = 0; i < nameArray.length; i++) {
+            var opt = nameArray[i];
+            var el = document.createElement("option");
+            el.textContent = opt;
+            el.value = opt;
+            ddlItems.appendChild(el);
+          }
+    })
+    
+}   
+ 
+
+init();
+
+
 
 // const dataPromise = d3.json(./samples.json);
-// console.log("Data Promise: ", dataPromise);
+//     console.log("Data Promise: ", dataPromise);
 
 
 
-//Drop Down Menu Event Handler
-// d3.selectAll("#selDataset").on("optionChange", updatePage);
+// Drop Down Menu Event Handler
+d3.selectAll("#selDataset").on("optionChange", updatePage);
 
-// function updatePage() {
-//   // Use D3 to select the dropdown menu
-//   var dropdownMenu = d3.selectAll("#selDataset").node();
-//   // Assign the dropdown menu item ID to a variable
-//   var dropdownMenuID = dropdownMenu.id;
-//   // Assign the dropdown menu option to a variable
-//   var selectedOption = dropdownMenu.value;
+function updatePage() {
+  // Use D3 to select the dropdown menu
+  var dropdownMenu = d3.selectAll("#selDataset").node();
+  // Assign the dropdown menu item ID to a variable
+  var dropdownMenuID = dropdownMenu.id;
+  // Assign the dropdown menu option to a variable
+  var selectedOption = dropdownMenu.value;
 
-//   console.log(dropdownMenuID);
-//   console.log(selectedOption);
-//}
+  console.log(dropdownMenuID);
+  console.log(selectedOption);
+}
 
 //Bar Chart Code
 
